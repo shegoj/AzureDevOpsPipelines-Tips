@@ -73,7 +73,7 @@ steps:
   condition: eq(variables.anyTfChanges, true)
   inputs:
     provider: 'azurerm'
-    command: 'apply'
+    command: 'apply -lock=false'
     workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
     commandOptions: 'tfplan'
     environmentServiceNameAzureRM: '$(subscription)'
