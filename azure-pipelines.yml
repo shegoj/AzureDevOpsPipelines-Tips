@@ -36,13 +36,16 @@ steps:
   inputs:
     provider: 'azurerm'
     workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
-    command: 'init && pwd'
+    command: 'init'
     backendServiceArm: '$(subscription)'
     backendAzureRmResourceGroupName: '$(resourceGroup)'
     backendAzureRmStorageAccountName: '$(storageAccount)'
     backendAzureRmContainerName: '$(container)'
     backendAzureRmKey: '$(tfstateFile)'
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'pwd && ls -ltr'
 - task: TerraformTaskV1@0
   displayName: terraform plan -out=tfplan
   inputs:
