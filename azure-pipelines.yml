@@ -75,5 +75,5 @@ steps:
     provider: 'azurerm'
     command: 'apply '
     workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
-    commandOptions: 'tfplan -lock=false'
+    commandOptions: '-lock=false tfplan '
     environmentServiceNameAzureRM: '$(subscription)'
