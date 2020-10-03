@@ -20,19 +20,6 @@ steps:
     terraformVersion: '0.12.28'
 
 - task: TerraformTaskV1@0
-  displayName: terraform initialization
-  inputs:
-    provider: 'azurerm'
-    command: 'init'
-    backendServiceArm: 'Free Trial (82435e9f-e9f8-4ee0-9375-0ce26318fda2)'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
-    backendAzureRmResourceGroupName: 'resourcegroup-tfstate'
-    backendAzureRmStorageAccountName: 'shsterraformtfstate'
-    backendAzureRmContainerName: 'container2'
-    backendAzureRmKey: 'terraform.tfstate'
-
-
-- task: TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
     workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
@@ -54,7 +41,11 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
     commandOptions: '-out=tfplan'
     # commandOptions: '-detailed-exitcode -out=tfplan'
-    environmentServiceNameAzureRM: '$(subscription)'
+    backendServiceArm: '$(subscription)'
+    backendAzureRmResourceGroupName: '$(resourceGroup)'
+    backendAzureRmStorageAccountName: '$(storageAccount)'
+    backendAzureRmContainerName: '$(container)'
+    backendAzureRmKey: '$(tfstateFile)'
 
 - task: PowerShell@2
   displayName: detect any terraform change
