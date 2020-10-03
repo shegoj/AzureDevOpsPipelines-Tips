@@ -45,7 +45,7 @@ steps:
 - task: Bash@3
   inputs:
     targetType: 'inline'
-    script: 'pwd && ls -ltr'
+    script: 'pwd && ls -ltr && terraform -h'
 - task: TerraformTaskV1@0
   displayName: terraform plan -out=tfplan
   inputs:
