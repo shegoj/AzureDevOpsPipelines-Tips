@@ -5,10 +5,10 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  subscription: Visual Studio Enterprise(82435e9f-e9f8-4ee0-9375-0ce26318fda2)
+  subscription: Free Trial (82435e9f-e9f8-4ee0-9375-0ce26318fda2)
   resourceGroup: resourcegroup-tfstate
   storageAccount: shsterraformtfstate
-  container: tfstate
+  container: container2
   tfstateFile: terraform.tfstate
   anyTfChanges: false
 
@@ -32,11 +32,9 @@ steps:
   inputs:
     provider: 'azurerm'
     command: 'init'
-    backendServiceArm: 'Free Trial (82435e9f-e9f8-4ee0-9375-0ce26318fda2)'
-    backendAzureRmResourceGroupName: 'resourcegroup-tfstate'
-    backendAzureRmStorageAccountName: 'shsterraformtfstate'
-    backendAzureRmContainerName: 'container2'
-    backendAzureRmKey: 'key2'
+    backendServiceArm: '$(subscription)'
+    backendAzureRmResourceGroupName: '$(resourceGroup)'
+    backendAzureRmStorageAccountName: '$(storageAccount)'
     backendAzureRmContainerName: '$(container)'
     backendAzureRmKey: '$(tfstateFile)'
 
