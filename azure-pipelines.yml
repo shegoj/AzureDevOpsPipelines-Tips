@@ -35,7 +35,8 @@ steps:
 - task: TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
-    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
+    command: 'init && pwd'
     backendServiceArm: '$(subscription)'
     backendAzureRmResourceGroupName: '$(resourceGroup)'
     backendAzureRmStorageAccountName: '$(storageAccount)'
