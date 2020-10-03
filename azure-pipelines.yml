@@ -19,8 +19,8 @@ steps:
   inputs:
     terraformVersion: '0.12.28'
 
-- task: TerraformInstaller@0
 - task: TerraformTaskV1@0
+  displayName: terraform initialization
   inputs:
     provider: 'azurerm'
     command: 'init'
@@ -31,15 +31,7 @@ steps:
     backendAzureRmContainerName: 'container2'
     backendAzureRmKey: 'terraform.tfstate'
 
-- task: TerraformTaskV1@0
-  displayName: terraform init
-  inputs:
-    provider: 'azurerm'
-    command: '-h'
-    workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
-    backendServiceArm: '$(subscription)'
-    backendAzureRmResourceGroupName: '$(resourceGroup)'
-    backendAzureRmStorageAccountName: '$(storageAccount)'
+
 - task: TerraformTaskV1@0
   inputs:
     provider: 'azurerm'
