@@ -23,7 +23,7 @@ steps:
   displayName: terraform init
   inputs:
     provider: 'azurerm'
-    command: 'terraform init'
+    command: '-h'
     workingDirectory: '$(System.DefaultWorkingDirectory)/skip-step'
     backendServiceArm: '$(subscription)'
     backendAzureRmResourceGroupName: '$(resourceGroup)'
