@@ -7,8 +7,8 @@ pool:
 variables:
   subscription: Free Trial (82435e9f-e9f8-4ee0-9375-0ce26318fda2)
   resourceGroup: resourcegroup-tfstate
-  storageAccount: shsterraformtfstate
-  container: container2
+  storageAccount: shegojtstate
+  container: tstate
   tfstateFile: terraform.tfstate
   anyTfChanges: false
 
@@ -28,7 +28,7 @@ steps:
     backendAzureRmResourceGroupName: '$(resourceGroup)'
     backendAzureRmStorageAccountName: '$(storageAccount)'
     backendAzureRmContainerName: '$(container)'
-    backendAzureRmKey: 'TY9H+E9jiK1ZPb3g4cRjyxc9rYZJLVTKuzxi+6gdu1v5OuNSORpNch2PajrrJ+0+n8mSIe2/D8JIJjsvhoCEnQ=='
+    backendAzureRmKey: 'kvhqgNSSszzf4L2mfzTd9uvnTDQQm3ju+qR0Yj1esqboFB/aF2os14xozsBalXUPg77hMB48mE/avuYy041NiQ=='
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -46,8 +46,7 @@ steps:
     backendAzureRmResourceGroupName: '$(resourceGroup)'
     backendAzureRmStorageAccountName: '$(storageAccount)'
     backendAzureRmContainerName: '$(container)'
-    backendAzureRmKey: 'TY9H+E9jiK1ZPb3g4cRjyxc9rYZJLVTKuzxi+6gdu1v5OuNSORpNch2PajrrJ+0+n8mSIe2/D8JIJjsvhoCEnQ=='
-
+    backendAzureRmKey: 'kvhqgNSSszzf4L2mfzTd9uvnTDQQm3ju+qR0Yj1esqboFB/aF2os14xozsBalXUPg77hMB48mE/avuYy041NiQ=='
 - task: PowerShell@2
   displayName: detect any terraform change
   inputs:
@@ -81,5 +80,5 @@ steps:
     backendAzureRmResourceGroupName: '$(resourceGroup)'
     backendAzureRmStorageAccountName: '$(storageAccount)'
     backendAzureRmContainerName: '$(container)'
-    backendAzureRmKey: 'TY9H+E9jiK1ZPb3g4cRjyxc9rYZJLVTKuzxi+6gdu1v5OuNSORpNch2PajrrJ+0+n8mSIe2/D8JIJjsvhoCEnQ=='
+    backendAzureRmKey: 'kvhqgNSSszzf4L2mfzTd9uvnTDQQm3ju+qR0Yj1esqboFB/aF2os14xozsBalXUPg77hMB48mE/avuYy041NiQ=='
 
