@@ -7,7 +7,7 @@ pool:
 variables:
   subscription: Free Trial (82435e9f-e9f8-4ee0-9375-0ce26318fda2)
   resourceGroup: resourcegroup-tfstate
-  storageAccount: shegojtstate
+  storageAccount: shegojtstateolu
   container: tstate
   tfstateFile: terraform.tfstate
   anyTfChanges: false
@@ -28,7 +28,7 @@ steps:
     backendAzureRmResourceGroupName: '$(resourceGroup)'
     backendAzureRmStorageAccountName: '$(storageAccount)'
     backendAzureRmContainerName: '$(container)'
-    backendAzureRmKey: 'kvhqgNSSszzf4L2mfzTd9uvnTDQQm3ju+qR0Yj1esqboFB/aF2os14xozsBalXUPg77hMB48mE/avuYy041NiQ=='
+    backendAzureRmKey: 'Ir8KUGJsl19mewffA7hbPnWbbhcUMH6aBG66T0RUaDCjo6j9Lh2Q1Wd3DqPXD2hcmRf8sTzXR8cUllaWAvjWfg=='
 - task: Bash@3
   inputs:
     targetType: 'inline'
