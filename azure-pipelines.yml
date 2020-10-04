@@ -6,7 +6,7 @@ pool:
 
 variables:
   subscription: Free Trial (82435e9f-e9f8-4ee0-9375-0ce26318fda2)
-  resourceGroup: resourcegroup-tfstate
+  resourceGroup: shegojtstateolu
   storageAccount: shegojtstateolu
   container: tstate
   tfstateFile: terraform.tfstate
